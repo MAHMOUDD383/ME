@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> LAYLA </title>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet"> <!-- Correct link for Lalezar font -->
+    <style>
+        body {
+            font-family: 'Lalezar', sans-serif; /* Use the Lalezar font */
+            text-align: center;
+            padding: 20px;
+            background-image: url('L2NEW.jpg'); /* Set the background image */
+            background-size: cover; /* Cover the entire body with the image */
+            background-position: center 20%; /* Center the image and move it down 20% */
+            color: #000000; /* Change text color to white for better contrast */
+        }
+        #messageBox {
+            border: 1px solid #ffacac;
+            padding: 10px;
+            margin-top: 20px;
+            display: none;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0); /* Slightly transparent background for better readability */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #000000;
+            color: rgb(255, 155, 155);
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <h1>محمود بيحب ليلي </h1>
+    <p>اتكي هنا يبيبي</p>
+    <button id="startButton">حاضر</button>
+    <div id="messageBox">
+        <p id="messageText"></p>
+        <button id="nextButton">التالي</button>
+    </div>
+
+    <script>
+        const messages = [
+            "سمووو عليكووو",
+            "عامله اي يبيبي ؟",
+            "  بعشقك يعمري ",
+           " انا اسف علي كل حاجه ",
+           "حقك عليا يعمري ",
+           "بحبك اوي" ,
+            "متزعليش مني 😔",
+            "بموت فيكي اوي اوي",
+            " Wanna Fuck U So Hard Baby ",
+            "بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك",
+        ];
+
+
+        const nextButtonLabels = [
+            "MASHY",
+            "MASHY",
+            "MASHY",
+            "MASHY",
+            "MASHY",
+            "MASHY",
+            "MASHY",
+            "MASHY",
+            "MASHY",
+            "MASHY",
+            "MASHY",
+
+            
+        ];
+
+        let currentMessageIndex = 0;
+
+        document.getElementById("startButton").onclick = () => {
+            currentMessageIndex = 0;
+            showMessage();
+        };
+
+        document.getElementById("nextButton").onclick = () => {
+            currentMessageIndex++;
+            showMessage();
+        };
+
+        function showMessage() {
+            if (currentMessageIndex < messages.length) {
+                document.getElementById("messageText").innerText = messages[currentMessageIndex];
+                document.getElementById("messageBox").style.display = "block";
+
+                const nextButton = document.getElementById("nextButton");
+                if (currentMessageIndex < nextButtonLabels.length) {
+                    nextButton.innerText = nextButtonLabels[currentMessageIndex];
+                } else {
+                    nextButton.innerText = "التالي";
+                }
+            } else {
+                alert(" مع السلامة يا حب");
+                document.getElementById("messageBox").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
